@@ -28,5 +28,5 @@ def mainmenu():
             else:
                 break
         moodlist.append(moodlvl) #adds object to the mood list created earlier
-    
-    return moodlist
+        
+        return moodlist

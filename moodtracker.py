@@ -14,6 +14,12 @@ class moodcalc: #create class for calculating moods
         self.total = (self.tmorn * self.tnoon * self.tnight)//3
         return self.total
 
-    def __str__(self) -> str:
+    def __str__(self) -> str: #setter function
         self.get_avg()
         return (f"Your mood averaged at level: {self.total}")
+
+class graphmood(moodcalc): #create class for graphing moods
+    import matplotlib.pyplot as plt
+
+plt.plot(range(10), moodlist)
+plt.show()
