@@ -1,7 +1,5 @@
 class moodcalc: #create class for calculating moods
 
-    import math #import math to be used in calculations 
-
     def __init__(self, morning, noon, night): #getter function, getting values: time of day, and level of mood
         self.tmorn = morning #level of mood in the morning
         self.tnoon = noon #level of mood at noon
