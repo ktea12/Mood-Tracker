@@ -1,12 +1,12 @@
 from moodtracker import moodcalc
 
-input("hello enter a number please:")
 def mainmenu():
     confirm = str(input("Welcome to Daily Mood Tracker \n Do you wish to evaluate your mood today? (YES/NO) "))
     while True: #keeps the user to prompt the question and answer with "YES" or "NO"
-        if confirm.upper == "YES":
+        if confirm.upper() == "YES":
             pass
-        elif confirm.upper == "NO":
+        elif confirm.upper() == "NO":
+            print("Goodbye!")
             break
         else:
             print("Please input YES or NO")
