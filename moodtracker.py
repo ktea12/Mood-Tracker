@@ -9,7 +9,7 @@ class moodcalc: #create class for calculating moods
         self.tmorn()
         self.tnoon()
         self.tnight()
-        self.total = (self.tmorn * self.tnoon * self.tnight)//3
+        self.total = (self.tmorn + self.tnoon + self.tnight)//3
         return self.total
 
     def __str__(self) -> str: #setter function

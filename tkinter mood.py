@@ -1,7 +1,7 @@
 import tkinter as tk
 
-HEIGHT = 700
-WIDTH = 1400
+HEIGHT = 100
+WIDTH = 100
 
 root = tk.Tk()
 
