@@ -1,3 +1,4 @@
+from asyncore import loop
 from moodtracker import moodcalc
 
 def mainmenu():
@@ -14,24 +15,23 @@ def mainmenu():
 
 def moodlistQL():
     moodlist = [] #creating an empty list
-    print("Please input a number from 1 to 10")
+    print("Please input a number between 0 to 5")
     while True: #keeps the user to prompt atleast more than 0
         morning = int(input("At what level was your mood in the morning? ")) 
         noon = int(input("At what level was your mood at noon? ")) #here is to input the mood level using int which accepts integers only
         night = int(input("At what level was your mood at night? "))
-        moodlvl = moodlistQL(morning, noon, night)
-        if 11 > morning == 0:
-            print("You must input a number above 0 and less than 10") #check if input level is 0 or above 10
-        elif 11 > noon == 0:
-            print("You must input a number above 0 and less than 10")
-        elif 11 > night == 0:
-            print("You must input a number above 0 and less than 10")
+        
+        if (morning < 6 and morning >= 0) and (noon < 6 and noon >= 0) and (night < 6 and night >= 0):
+            pass
         else:
-            break
+            print("You must input a number between 0 and 5") #check if input level is between 0 and 5
+            morning = int(input("At what level was your mood in the morning? ")) 
+            noon = int(input("At what level was your mood at noon? ")) #here is to input the mood level using int which accepts integers only
+            night = int(input("At what level was your mood at night? "))
+        
         print(f"Your mood averaged at level: {(morning + noon + night)//3}")
 
-    moodlist.append(moodlvl) #adds object to the mood list created earlier
-    
-    return moodlist
+        moodlist.append(morning, noon, night) #adds object to the mood list created earlier
+        return moodlist
 
 moodlistQL()

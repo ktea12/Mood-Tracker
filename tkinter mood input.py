@@ -1,44 +1,26 @@
+from tkinter import *
 import tkinter as tk
 
-HEIGHT = 100
-WIDTH = 100
+# create an instance of tkinter
+win = tk.Tk()
 
-root = tk.Tk()
+#Define the size of the window
+win.geometry("500x500")
 
-canvas = tk.Canvas(root, height=HEIGHT, width=HEIGHT) #background
-canvas.pack()
+#Name the title of the window
+win.title("Mood Tracker")
 
-label = tk.Label(text="How is your mood today?")
-label.pack()
+# number of buttons
+n=6
 
-button = tk.Button(root, text="1")
-button.pack()
+#Defining the row and column
+i=3
 
-button = tk.Button(root, text="2")
-button.pack()
+#Iterating over the numbers till n and
+#creating the button
+for j in range(n):
+   mybutton= Button(win, text=j)
+   mybutton.grid(row=i, column=j)
 
-button = tk.Button(root, text="3")
-button.pack()
-
-button = tk.Button(root, text="4")
-button.pack()
-
-button = tk.Button(root, text="5")
-button.pack()
-
-button = tk.Button(root, text="6")
-button.pack()
-
-button = tk.Button(root, text="7")
-button.pack()
-
-button = tk.Button(root, text="8")
-button.pack()
-
-button = tk.Button(root, text="9")
-button.pack()
-
-button = tk.Button(root, text="10")
-button.pack()
-
-root.mainloop()
+# Keep the window open
+win.mainloop()
