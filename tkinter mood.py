@@ -1,7 +1,5 @@
 import tkinter as tk
 
-
-
 def mainmenu():
     confirm = entry.get().strip()
     while True: #keeps the user to prompt the question and answer with "YES" or "NO"
