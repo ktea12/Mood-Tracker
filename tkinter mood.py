@@ -1,5 +1,7 @@
 import tkinter as tk
 
+
+
 def mainmenu():
     confirm = entry.get().strip()
     while True: #keeps the user to prompt the question and answer with "YES" or "NO"
@@ -17,10 +19,12 @@ WIDTH = 700
 
 root = tk.Tk()
 
+root.title("Mood Tracker")
+
 canvas = tk.Canvas(root, height=HEIGHT, width=HEIGHT) #background
 canvas.pack()
 
-label = tk.Label(font=50, text="Welcome to Daily Mood Tracker \nDo you wish to evaluate your Mood today? (YES/NO)")
+label = tk.Label(font=50, text="Welcome to Daily Mood Tracker \n\nDo you wish to evaluate your Mood today? (YES/NO)")
 label.place(relwidth=1, relheight=0.5)
 
 entry = tk.Entry(font=40)
