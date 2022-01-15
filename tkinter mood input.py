@@ -1,5 +1,4 @@
 import tkinter
-from turtle import width
 
 root=tkinter.Tk()
 root.title("Mood Tracker")
