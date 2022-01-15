@@ -23,9 +23,9 @@ class moodcalc: #create class for calculating moods
     def graph_mood_score(self):
         plt.plot(self.time_of_day, self.moodscore)
         plt.xlabel('Time of Day')
-        plt.ylabel('Mood Score')
-        plt.title('Mood Score over Time')
+        plt.ylabel('Mood Level')
+        plt.title('Mood Level over Time')
         plt.show()
 
-mood=moodcalc(1,2,3)
+mood=moodcalc(3,5,2)
 mood.graph_mood_score()
