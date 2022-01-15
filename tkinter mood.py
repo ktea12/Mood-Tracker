@@ -1,15 +1,16 @@
 import tkinter as tk
 
 def mainmenu():
-    confirm = entry.get().strip().upper()
+    confirm = entry.get().strip()
     while True: #keeps the user to prompt the question and answer with "YES" or "NO"
-        if confirm == "YES":
+        if confirm.upper() == str("YES"):
             pass
-        elif confirm == "NO":
+        elif confirm.upper() == str("NO"):
             label['text'] = "Goodbye!\nInput YES to evaluate Mood."
-
+            break
         else:
             label['text'] = "Please input YES or NO\nDo you wish to evaluate your Mood today?"
+            break
 
 HEIGHT = 500
 WIDTH = 700
