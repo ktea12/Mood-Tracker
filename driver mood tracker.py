@@ -1,4 +1,3 @@
-from asyncore import loop
 from moodtracker import moodcalc
 
 def mainmenu():
