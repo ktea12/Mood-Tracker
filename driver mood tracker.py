@@ -12,8 +12,14 @@ def mainmenu():
             print("Please input YES or NO")
             confirm = str(input("Welcome to Daily Mood Tracker \nDo you wish to evaluate your mood today? (YES/NO) "))
 
+moodlist = [] #creating an empty list
+timeofday = ["Morning", "Noon", "Night"] #creating list for x-axis
+morning = 0 #setting initial values to 0
+noon = 0
+night = 0
+
 def moodlistQL():
-    moodlist = [] #creating an empty list
+
     print("Please input a number between 0 to 5")
     while True: #keeps the user to prompt atleast more than 0
         morning = int(input("At what level was your mood in the morning? ")) 
@@ -28,9 +34,7 @@ def moodlistQL():
             noon = int(input("At what level was your mood at noon? ")) #here is to input the mood level using int which accepts integers only
             night = int(input("At what level was your mood at night? "))
         
-        print(f"Your mood averaged at level: {(morning + noon + night)//3}")
-
-        moodlist.append(morning, noon, night) #adds object to the mood list created earlier
-        return moodlist
+        print(f"Your mood averaged at level: {(morning + noon + night)//3}")#calculate average mood level
 
 moodlistQL()
+

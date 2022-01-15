@@ -4,6 +4,7 @@ class moodcalc: #create class for calculating moods
         self.tmorn = morning #level of mood in the morning
         self.tnoon = noon #level of mood at noon
         self.tnight = night #level of mood at night
+        self.moodscore = [self.tmorn, self.tnoon, self.tnight]
 
     def get_avg(self):
         self.tmorn()
