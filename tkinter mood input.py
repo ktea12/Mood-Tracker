@@ -1,3 +1,4 @@
+from typing_extensions import IntVar
 from matplotlib import pyplot as plt
 import tkinter
 
@@ -10,12 +11,15 @@ HEIGHT = 10
 
 class moodcalc: #create class for calculating moods
 
-    def __init__(self, morning, noon, night): #getter function, getting values: time of day, and level of mood
+    def __init__(self, morning, noon, night, ): #getter function, getting values: time of day, and level of mood
         self.tmorn = morning #level of mood in the morning
         self.tnoon = noon #level of mood at noon
         self.tnight = night #level of mood at night
         self.moodscore = [self.tmorn, self.tnoon, self.tnight]
         self.time_of_day = ['Morning', 'Noon', 'Night']
+        self.morntf = None
+        self.noontf = None
+        self.nighttf = None
 
     def get_avg(self):
         self.tmorn()
@@ -28,14 +32,20 @@ class moodcalc: #create class for calculating moods
         self.get_avg()
         return (f"Your mood averaged at level: {self.total}")
 
+    def update_inputs(self):
+        morning2 = int(morning.get())
+        noon2 = int(noon.get())
+        night2 = int(night.get())
+
+        self.moodscore = [morning2,noon2,night2]
+
     def graph_mood_score(self):
+        self.update_inputs()
         plt.plot(self.time_of_day, self.moodscore)
         plt.xlabel('Time of Day')
         plt.ylabel('Mood Level')
         plt.title('Mood Level over Time')
         plt.show()
-
-mood=moodcalc()
 
 
 label =tkinter.Label (text="Welcome to Mood track.")
@@ -49,7 +59,7 @@ button0.grid(row=2, column=2, padx=7, pady=10)
 button1=tkinter.Button(root, text="1\n\nBad and Unproductive", width=WIDTH, height=HEIGHT)
 button1.grid(row=2,column=3, padx=7, pady=10)
 
-button2=tkinter.Button(root, text="2\n\nBad but Productive", width=WIDTH, height=HEIGHT)
+button2=tkinter.Button(root, text="2\n\nBad and Unproductive", width=WIDTH, height=HEIGHT)
 button2.grid(row=2,column=4, padx=7, pady=10)
 
 button3=tkinter.Button(root, text="3\n\nNot so Good but OK", width=WIDTH, height=HEIGHT)
@@ -61,26 +71,49 @@ button4.grid(row=2,column=6, padx=7, pady=10)
 button5=tkinter.Button(root, text="5\n\nVery Good Mood", width=WIDTH, height=HEIGHT)
 button5.grid(row=2,column=7, padx=7, pady=10)
 
+
+morning2 = IntVar("1")
+
 label =tkinter.Label (text="Morning Mood? ")
 label.grid(row=3, column=4, pady=20)
-morning = tkinter.Entry(font=40, width=15)
+morning = tkinter.Entry(font=40, textvariable = morning2, width=15)
 morning.grid(row=3, column=5, pady=20)
 
-label =tkinter.Label (text="Mood at noon? ")
+afternoon2 = IntVar("2")
+
+label =tkinter.Label (text="Mood at Noon? ")
 label.grid(row=4, column=4, pady=20)
-noon = tkinter.Entry(font=40, width=15)
+noon = tkinter.Entry(font=40, width=15, textvariable=afternoon2)
 noon.grid(row=4, column=5, pady=20)
 
-label =tkinter.Label (text="Mood at night? ")
+
+night2 = IntVar("3")
+label =tkinter.Label (text="Mood at Night? ")
 label.grid(row=5, column=4, pady=20)
-night = tkinter.Entry(font=40, width=15)
+night = tkinter.Entry(textvariable = night2, font=40, width=15)
 night.grid(row=5, column=5, pady=20)
 
 back =tkinter.Button (text="Go to Main Page")
 back.grid(row=6, column=4, pady=20)
 
-graph =tkinter.Button (text="Plot Graph", command=mood.graph_mood_score())
-graph.grid(row=6, column=5, pady=20)
 
+# morning2 = int(morning.get())
+# noon2 = int(noon.get())
+# night2 = int(night.get())
+
+# moodlevel = [morning2,afternoon2,night2]
+
+
+
+# mood=moodcalc(morning2,noon2,night2)
+
+mood=moodcalc(0,0,0)
+
+mood.morntf = morning
+mood.noontf = noon
+mood.nighttf = night
+
+graph =tkinter.Button(text="Plot Mood Graph", command=mood.graph_mood_score)
+graph.grid(row=6, column=5, pady=20)
 
 root.mainloop()

@@ -12,14 +12,11 @@ def mainmenu():
             label['text'] = "Please input YES or NO\nDo you wish to evaluate your Mood today?"
             break
 
-HEIGHT = 500
-WIDTH = 700
-
 root = tk.Tk()
 
 root.title("Mood Tracker")
 
-canvas = tk.Canvas(root, height=HEIGHT, width=HEIGHT) #background
+canvas = tk.Canvas(root, height=500, width=500) #background
 canvas.pack()
 
 label = tk.Label(font=50, text="Welcome to Daily Mood Tracker \n\nDo you wish to evaluate your Mood today? (YES/NO)")
