@@ -30,9 +30,24 @@ button4.grid(row=2,column=6, padx=7, pady=10)
 button5=tkinter.Button(root, text="5\n\nVery Good Mood", width=WIDTH, height=HEIGHT)
 button5.grid(row=2,column=7, padx=7, pady=10)
 
+label =tkinter.Label (text="Morning Mood? ")
+label.grid(row=3, column=4, pady=20)
+morning = tkinter.Entry(font=40, width=15)
+morning.grid(row=3, column=5, pady=20)
+
+label =tkinter.Label (text="Mood at noon? ")
+label.grid(row=4, column=4, pady=20)
+noon = tkinter.Entry(font=40, width=15)
+noon.grid(row=4, column=5, pady=20)
+
+label =tkinter.Label (text="Mood at night? ")
+label.grid(row=5, column=4, pady=20)
+night = tkinter.Entry(font=40, width=15)
+night.grid(row=5, column=5, pady=20)
+
 back =tkinter.Button (text="Go to Main Page")
-back.grid(row=3, column=4, pady=20)
+back.grid(row=6, column=4, pady=20)
 graph =tkinter.Button (text="Plot Graph")
-graph.grid(row=3, column=5, pady=20)
+graph.grid(row=6, column=5, pady=20)
 
 root.mainloop()
