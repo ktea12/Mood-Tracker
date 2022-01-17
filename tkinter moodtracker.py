@@ -24,17 +24,6 @@ class moodcalc: #create class for calculating moods
 #Added attributes in the class called morningtf, noontf and nighttf
 #these attributes are linking to the text field from the tkinter (morning, noon and night text fields)
 
-    def get_avg(self):
-        self.tmorn()
-        self.tnoon()
-        self.tnight()
-        self.total = (self.tmorn + self.tnoon + self.tnight)//3
-        return self.total
-
-    def __str__(self) -> str: #setter function
-        self.get_avg()
-        return (f"Your mood averaged at level: {self.total}")
-
     def update_inputs(self):
         morning2 = int(morning.get())
         noon2 = int(noon.get())
@@ -95,9 +84,6 @@ label =tkinter.Label (text="Mood at night? ")
 label.grid(row=5, column=4, pady=20)
 night = tkinter.Entry(textvariable = night2, font=40, width=15)
 night.grid(row=5, column=5, pady=20)
-
-back =tkinter.Button (text="Go to Main Page")
-back.grid(row=6, column=4, pady=20)
 
 # morning2 = int(morning.get())
 # noon2 = int(noon.get())
