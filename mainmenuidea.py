@@ -16,7 +16,7 @@ root = tk.Tk()
 
 root.title("Mood Tracker")
 
-canvas = tk.Canvas(root, height=500, width=500) #background
+canvas = tk.Canvas(root, height=500, width=500) #background size
 canvas.pack()
 
 label = tk.Label(font=50, text="Welcome to Daily Mood Tracker \n\nDo you wish to evaluate your Mood today? (YES/NO)")
