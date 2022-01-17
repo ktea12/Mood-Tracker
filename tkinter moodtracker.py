@@ -21,6 +21,9 @@ class moodcalc: #create class for calculating moods
         self.noontf = None
         self.nighttf = None
 
+#Added attributes in the class called morningtf, noontf and nighttf
+#these attributes are linking to the text field from the tkinter (morning, noon and night text fields)
+
     def get_avg(self):
         self.tmorn()
         self.tnoon()
@@ -96,7 +99,6 @@ night.grid(row=5, column=5, pady=20)
 back =tkinter.Button (text="Go to Main Page")
 back.grid(row=6, column=4, pady=20)
 
-
 # morning2 = int(morning.get())
 # noon2 = int(noon.get())
 # night2 = int(night.get())
@@ -112,7 +114,7 @@ mood.noontf = noon
 mood.nighttf = night
 
 graph =tkinter.Button(text="Plot Graph", command=mood.graph_mood_score)
-graph.grid(row=6, column=5, pady=20)
+graph.grid(row=6, column=5, pady=20) #Fuction graph : -> get values that was entered in the field and graph in the matplot
 
 
 root.mainloop() #for window display
