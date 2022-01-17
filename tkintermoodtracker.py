@@ -9,7 +9,7 @@ root.geometry("1000x500")
 WIDTH = 20
 HEIGHT = 10
 
-class moodcalc: #create class for calculating moods
+class moodgraph: #create class for graphing moods
 
     def __init__(self, morning, noon, night, ): #getter function, getting values: time of day, and level of mood
         self.tmorn = morning #level of mood in the morning
@@ -88,12 +88,10 @@ night.grid(row=5, column=5, pady=20)
 # morning2 = int(morning.get())
 # noon2 = int(noon.get())
 # night2 = int(night.get())
-
 # moodlevel = [morning2,afternoon2,night2]
+# mood=moodgraph(morning2,noon2,night2)
 
-# mood=moodcalc(morning2,noon2,night2)
-
-mood=moodcalc(0,0,0)
+mood=moodgraph(0,0,0)
 
 mood.morntf = morning
 mood.noontf = noon
