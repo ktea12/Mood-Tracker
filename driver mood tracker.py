@@ -32,4 +32,3 @@ def moodlistQL():
         print(f"Your mood averaged at level: {(morning + noon + night)//3}")#calculate average mood level
 
 moodlistQL()
-

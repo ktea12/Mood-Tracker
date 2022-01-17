@@ -103,8 +103,6 @@ back.grid(row=6, column=4, pady=20)
 
 # moodlevel = [morning2,afternoon2,night2]
 
-
-
 # mood=moodcalc(morning2,noon2,night2)
 
 mood=moodcalc(0,0,0)
@@ -117,5 +115,4 @@ graph =tkinter.Button(text="Plot Graph", command=mood.graph_mood_score)
 graph.grid(row=6, column=5, pady=20)
 
 
-
-root.mainloop()
+root.mainloop() #for window display
